@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'admin/zakazlar.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakazlar</title>
+</head>
+<body>
+    <h2>Diagnostikalar</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Zakaz ID</th>
+                <th>Mijoz FIO</th>
+                <th>Avtosi</th>
+                <th>Rangi</th>
+                <th>Diagnostika</th>
+                <th>Servis</th>
+                <th>Usta FIO</th>
+                <th>Usta Haqqi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for diagnostika in diagnostikalar %}
+                <tr>
+                    <td>{{ diagnostika.zakaz_id.id }}</td>
+                    <td>{{ diagnostika.zakaz_id.mijoz_fio }}</td>
+                    <td>{{ diagnostika.zakaz_id.avtosi }}</td>
+                    <td>{{ diagnostika.zakaz_id.rangi }}</td>
+                    <td>{{ diagnostika.zakaz_id.diagnostika }}</td>
+                    <td>{{ diagnostika.servis }}</td>
+                    <td>{{ diagnostika.usta_id.fio }}</td>
+                    <td>{{ diagnostika.usta_haqqi }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock content%}
