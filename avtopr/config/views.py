@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import render,redirect
+from django.urls import reverse
 from django.views import View
 
 from config.forms import *
@@ -42,6 +43,23 @@ class ZakazlarView(View,AdminCheck):
         diagnostikalar=Diagnostikalar.objects.all()
         return render(request,'admin/zakazlar.html',{'diagnostikalar':diagnostikalar})
 
+class EditXizmatView(View,AdminCheck):
+    def get(self, request, id):
+        diagnostika = Diagnostikalar.objects.get(id=id)
+        form = DiagnostikalarForm(instance=diagnostika)
+        form1 = ZakazForm(instance=diagnostika)
+        return render(request, "admin/zakazedit.html", {"form": form, "form1": form1})
+
+    def post(self, request, id):
+        diagnostika = Diagnostikalar.objects.get(id=id)
+        form = DiagnostikalarForm(data=request.POST, instance=diagnostika)
+        form1 = ZakazForm(data=request.POST, instance=diagnostika)
+
+        if form.is_valid() and form1.is_valid():
+            form.save()
+            form1.save()
+            return redirect(reverse("zakazlar"))
+        return render(request, "admin/zakazedit.html", {'form': form, 'form1': form1})
 
 
 

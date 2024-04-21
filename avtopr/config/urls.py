@@ -32,7 +32,7 @@ urlpatterns = [
 
     path('zakas/',ZakazOlishView.as_view(),name='zakaz'),
     path('zakazlar/',ZakazlarView.as_view(),name='zakazlar'),
-    path('servis/',ServisView.as_view(),name='servis')
-
+    path('servis/',ServisView.as_view(),name='servis'),
+    path('zakazedit/<id>', EditXizmatView.as_view(), name='zakazedit'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

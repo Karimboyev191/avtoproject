@@ -36,6 +36,8 @@
                     <td>{{ diagnostika.servis }}</td>
                     <td>{{ diagnostika.usta_id.fio }}</td>
                     <td>{{ diagnostika.usta_haqqi }}</td>
+                    <td><a href="{% url 'zakazedit' diagnostika.id %}">edit</a></td>
+
                 </tr>
             {% endfor %}
         </tbody>
