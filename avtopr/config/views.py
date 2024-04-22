@@ -14,7 +14,7 @@ class AdminCheck(UserPassesTestMixin):
     def test_func(self):
         return self.request.user.is_superuser
 
-class ZakazOlishView(View,AdminCheck):
+class ZakazOlishView(AdminCheck,View):
     def get(self, request):
         zakaz_form = ZakazForm()
         return render(request, 'admin/zakaz.html', {'zakaz_form': zakaz_form})
@@ -26,7 +26,7 @@ class ZakazOlishView(View,AdminCheck):
             return redirect('servis')
         return render(request, 'admin/zakaz.html', {'zakaz_form': zakaz_form})
 
-class ServisView(View,AdminCheck):
+class ServisView(AdminCheck,View):
     def get(self,request):
         servis_form=DiagnostikalarForm()
         return render(request,'admin/servis.html',{'servis_form':servis_form})
@@ -38,12 +38,12 @@ class ServisView(View,AdminCheck):
             return redirect('zakazlar')
         return render(request, 'admin/.html', {'servis_form':servis_form })
 
-class ZakazlarView(View,AdminCheck):
+class ZakazlarView(AdminCheck,View):
     def get(self,request):
         diagnostikalar=Diagnostikalar.objects.all()
         return render(request,'admin/zakazlar.html',{'diagnostikalar':diagnostikalar})
 
-class EditXizmatView(View,AdminCheck):
+class EditXizmatView(AdminCheck,View):
     def get(self, request, id):
         diagnostika = Diagnostikalar.objects.get(id=id)
         form = DiagnostikalarForm(instance=diagnostika)

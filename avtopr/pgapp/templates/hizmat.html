@@ -1,29 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-
-
-<!--<link rel="stylesheet" href="{% static 'mijoz/xizmat.mijoz' %}">-->
-
-<div class="row">
-  {% for i in xizmatlar %}
-    <div class="col-md-3">
-      <div class="card mt-3 p-3" style="width: 100%;">
-        <img src="{{ i.picture.url }}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{ i.nomi }}</h5>
-          <p class="card-text">{{ i.xizmatlar | slice:50 }}</p>
-          <a href="{% url 'xizdetail' i.id %}" class="btn btn-primary">Ko'rish</a>
+<div class="container">
+  <div class="row">
+    {% for xizmat in xizmatlar %}
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{ xizmat.picture.url }}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ xizmat.nomi }}</h5>
+            <p class="card-text">{{ xizmat.xizmatlar | slice:50 }}</p>
+            <a href="{% url 'xizdetail' xizmat.id %}" class="btn btn-primary card-button">Ko'rish</a>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
-{% endblock content%}
-
-
-
-
-
-
+{% endblock content %}
