@@ -1,0 +1,33 @@
+/* admin/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    color: #333;
+}
+.padd {
+padding-top:120px
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

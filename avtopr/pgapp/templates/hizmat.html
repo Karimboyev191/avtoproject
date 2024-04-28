@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet"  href="{% static 'mijoz/xizmat.css' %}">
+<div class="container kalla_ogriq">
+  <div class="row">
+    {% for xizmat in xizmatlar %}
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{ xizmat.picture.url }}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ xizmat.nomi }}</h5>
+            <p class="card-text">{{ xizmat.xizmatlar | slice:50 }}</p>
+            <a href="{% url 'xizdetail' xizmat.id %}" class="btn btn-primary card-button">Ko'rish</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

@@ -18,9 +18,5 @@ class XizDetailView(View):
         return render(request,"hizdetail.html",{"xizmat":xizmat})
 
 
-class ContactView(TemplateView):
-    template_name = 'contact.html'
 
-class AboutView(TemplateView):
-    template_name = 'about.html'
 

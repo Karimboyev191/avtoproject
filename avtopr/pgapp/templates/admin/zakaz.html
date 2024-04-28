@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'admin/servis.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="padd">
+    <h2>Zakaz olish</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ zakaz_form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+</body>
+{% endblock content%}

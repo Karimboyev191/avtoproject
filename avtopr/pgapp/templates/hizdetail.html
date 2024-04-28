@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'mijoz/contact.css' %}">
+    <div class="xizmat-container kalla_ogriq">
+        <div class="xizmat-image">
+
+            <img src="{{ xizmat.picture.url }}" alt="{{ xizmat.nomi }}" class="xizmat-image">
+        </div>
+        <div class="xizmat-details">
+
+            <h2 class="xizmat-title">{{ xizmat.nomi }}</h2>
+
+            <p class="xizmat-description">{{ xizmat.xizmatlar }}</p>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+/* xizdet.css */
+.xizmat-container {
+    padding-top:150px
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* Örnek bir üst boşluk */
+}
+
+.xizmat-image {
+    margin-right: 20px; /* İlgili görüntü ile metin arasındaki boşluk */
+}
+
+.xizmat-image img {
+    max-width: 100%; /* Resmin maksimum genişliği */
+    height: auto; /* Oranları koru */
+}
+
+.xizmat-details {
+    /* Metin stilini ayarla (örneğin, font, renk, boyut vb.) */
+}
