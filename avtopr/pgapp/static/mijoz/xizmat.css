@@ -1,6 +1,21 @@
-.kalla_ogriq {
- padding-top:150px
+.row .col-md-4 .card {
+    margin-bottom: 2rem;
+    box-shadow: 3px 1px 5px rgb(195, 171, 206);
 }
+
+.row .col-md-4 .card .card-img-top {
+    width: 350.4px;
+    height: 208.44px;
+}
+
+.card {
+    box-shadow: 3px 1px 5px rgb(195, 171, 206);
+}
+
+.kalla_ogriq {
+    padding-top: 150px;
+}
+
 
 .card {
   box-shadow: 3px 1px 5px rgb(195, 171, 206);

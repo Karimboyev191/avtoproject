@@ -1,4 +1,7 @@
 /* xizdet.css */
+.col{
+background-color:#004953;
+}
 .xizmat-container {
     padding-top:150px
     display: flex;

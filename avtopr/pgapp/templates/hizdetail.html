@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
+  <script src="{% static 'js/script.js' %}"></script>
     <link rel="stylesheet" href="{% static 'mijoz/contact.css' %}">
-    <div class="xizmat-container kalla_ogriq">
+    <div class="xizmat-container kalla_ogriq col">
         <div class="xizmat-image">
 
             <img src="{{ xizmat.picture.url }}" alt="{{ xizmat.nomi }}" class="xizmat-image">

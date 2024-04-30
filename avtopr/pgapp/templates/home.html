@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
+  <script src="{% static 'js/script.js' %}"></script>
  <main>
     <article>
 
@@ -22,7 +23,7 @@
 <!--              -->
 <!--            </p>-->
 
-            <a href="#" class="btn">
+            <a href="{% url 'hizmatl' %}" class="btn">
               <span class="span">Bizning xizmatlarimiz</span>
 
               <span class="material-symbols-rounded">arrow_forward</span>
@@ -200,25 +201,25 @@
 
               <li class="about-item">
                 <p>
-                  <strong class="display-1 strong">8K+</strong> Happy Clients
+                  <strong class="display-1 strong">8K+</strong> Xursand mijozlar
                 </p>
               </li>
 
               <li class="about-item">
                 <p>
-                  <strong class="display-1 strong">22+</strong> Instruments
+                  <strong class="display-1 strong">22+</strong> Xizmatlar
                 </p>
               </li>
 
               <li class="about-item">
                 <p>
-                  <strong class="display-1 strong">50+</strong> Years in market
+                  <strong class="display-1 strong">30+</strong> Yil bozorda
                 </p>
               </li>
 
               <li class="about-item">
                 <p>
-                  <strong class="display-1 strong">99%</strong> Projects completed
+                  <strong class="display-1 strong">99%</strong> Tugallangan loyihalar
                 </p>
               </li>
 
