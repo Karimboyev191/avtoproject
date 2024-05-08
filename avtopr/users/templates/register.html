@@ -4,6 +4,17 @@
 <link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
   <script src="{% static 'js/script.js' %}"></script>
 <style>
+
+    .import {
+        padding: 5px 20px !important;
+        margin-top:10px !important;
+        color: white;
+    }
+
+    .import:hover {
+        color: white;
+    }
+
     .row {
         margin-top: 50px;
         background-color: #f4f4f4;
@@ -17,12 +28,16 @@
         margin-top: 10px;
     }
     .padding {
-    padding-top:100px
+    padding-top:100px;
+    width:100%;
+    height:100%;
+    position:fixed;
+    background-color: #f4f4f4;
     }
 
 </style>
-
-<div class="row justify-content-center padding">
+<div class="padding">
+<div class="row justify-content-center">
     <div class="col-sm-6">
         <h2 class="text-muted">Register</h2>
         <form method="POST" action="{% url 'register' %}">
@@ -45,10 +60,11 @@
                 <span class="text-danger">{{ form.password2.errors }}</span>
             </div>
 
-            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark import">Submit</button>
 
-            <a href="{% url 'login' %}" class="btn btn-default">Login</a>
+            <a href="{% url 'login' %}" class="btn btn-default import">Login</a>
         </form>
     </div>
 </div>
+    </div>
 {% endblock %}

@@ -4,6 +4,7 @@
 
 <link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
   <script src="{% static 'js/script.js' %}"></script>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <head>
     <link rel="stylesheet" href="{% static 'admin/zakazlar.css' %}">
@@ -12,8 +13,8 @@
     <title>Zakazlar</title>
 </head>
 <body>
-<div class="padd">
-    <h2>Diagnostikalar</h2>
+<div class="padd container">
+    <h2>заказы</h2>
     <table border="1">
         <thead>
             <tr>
@@ -38,7 +39,11 @@
                     <td>{{ diagnostika.servis }}</td>
                     <td>{{ diagnostika.usta_id.fio }}</td>
                     <td>{{ diagnostika.usta_haqqi }}</td>
-                    <td><a href="{% url 'zakazedit' diagnostika.id %}">edit</a></td>
+
+                    <td><a href="{% url 'zakazedit' diagnostika.id %}">
+                <i class='bx bx-edit-alt'></i>
+            </a></td>
+
 
                 </tr>
             {% endfor %}

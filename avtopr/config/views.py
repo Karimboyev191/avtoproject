@@ -43,6 +43,27 @@ class ZakazlarView(AdminCheck,View):
         diagnostikalar=Diagnostikalar.objects.all()
         return render(request,'admin/zakazlar.html',{'diagnostikalar':diagnostikalar})
 
+class ZakazlarDeleteAndYuborishView(View):
+    def get(self, request):
+        diagnostikalar = Diagnostikalar.objects.all()
+        form = YuborishForm()
+        return render(request, 'admin/zakazlar_delete_and_yuborish.html', {'diagnostikalar': diagnostikalar, 'form': form})
+
+    def post(self, request):
+        diagnostikalar_id_list = request.POST.getlist('delete_diagnostikalar')
+        Diagnostikalar.objects.filter(id__in=diagnostikalar_id_list).delete()
+        form = YuborishForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('boshqa_jadvalga_yuborish')
+        return render(request, 'admin/zakazlar_delete_and_yuborish.html', {'form': form})
+
+class BoshqaJadvalgaYuborishView(View):
+    def post(self, request):
+        # Boshqa jadvalga yuborishni bajarish uchun kerakli logika
+        return redirect('zakazlar_delete_and_yuborish')
+
+
 class EditXizmatView(AdminCheck,View):
     def get(self, request, id):
         diagnostika = Diagnostikalar.objects.get(id=id)

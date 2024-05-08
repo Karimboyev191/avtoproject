@@ -41,48 +41,49 @@
           {% if request.user.is_superuser %}
 
           <li>
-            <a href="{% url 'home' %}" class="navbar-link">Bosh sahifa</a>
+            <a href="{% url 'home' %}" class="navbar-link">Главная</a>
           </li>
 
           <li>
-            <a href="{% url 'zakaz' %}" class="navbar-link">Zakaz olish</a>
+            <a href="{% url 'zakaz' %}" class="navbar-link">получить заказ</a>
           </li>
           <li>
-            <a href="{% url 'servis' %}" class="navbar-link">Servis</a>
+            <a href="{% url 'servis' %}" class="navbar-link">работы на заказ</a>
           </li>
           <li>
-            <a href="{% url 'zakazlar' %}" class="navbar-link">Zakazlar ro'yhati</a>
+            <a href="{% url 'zakazlar' %}" class="navbar-link">заказы</a>
           </li>
+
              <a href="{% url 'logout' %}" class="btn btn-primary">
-                    <span class="span">Chiqish</span>
+                    <span class="span">Выход</span>
                     <span class="material-symbols-rounded">arrow_forward</span>
                   </a>
 
 
           {% else %}
           <li>
-            <a href="{% url 'home' %}" class="navbar-link">Bosh sahifa</a>
+            <a href="{% url 'home' %}" class="navbar-link">Главная</a>
           </li>
 
           <li>
-            <a href="#about" class="navbar-link">Biz haqimizda</a>
+            <a href="#about" class="navbar-link">о нас</a>
           </li>
           <li>
-            <a href="#servis" class="navbar-link">Xizmatlar</a>
+            <a href="{% url 'hizmatl' %}" class="navbar-link">услуги</a>
           </li>
           <li>
-            <a href="#contact" class="navbar-link">Bog'lanish</a>
+            <a href="#contact" class="navbar-link">контакты</a>
           </li>
         </ul>
       </nav>
                    {% if request.user.is_authenticated %}
                   <a href="{% url 'logout' %}" class="btn btn-primary">
-                    <span class="span">Chiqish</span>
+                    <span class="span">Выход</span>
                     <span class="material-symbols-rounded">arrow_forward</span>
                   </a>
                   {% else %}
                   <a href="{% url 'login' %}" class="btn btn-primary">
-                    <span class="span">Kirish</span>
+                    <span class="span">Вход</span>
                     <span class="material-symbols-rounded">arrow_forward</span>
                   </a>
                   {% endif %}
@@ -100,6 +101,7 @@
   {% block content %}
 
   {% endblock content %}
+
 </main>
 </body>
 </html>

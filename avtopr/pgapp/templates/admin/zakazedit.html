@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
   <script src="{% static 'js/script.js' %}"></script>
 <link rel="stylesheet" href="{% static 'admin/servis.css' %}">
-<div class="padd">
-<h2 style="text-align: center;">Diagnostikani Tahrirlash</h2>
+<div class="padd container">
+<h2 style="text-align: center;">изменить заказ</h2>
 <form method="post" class="edit-form">
     {% csrf_token %}
     <div class="form-group">
@@ -14,7 +14,7 @@
     <div class="form-group">
         {{ form1.as_p }}
     </div>
-    <button type="submit" class="btn btn-primary">Saqlash</button>
+    <button type="submit" class="btn btn-primary">изменять</button>
 </form>
 </div>
 {% endblock %}

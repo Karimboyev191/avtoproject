@@ -4,16 +4,16 @@
 <link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
   <script src="{% static 'js/script.js' %}"></script>
 <link rel="stylesheet" href="{% static 'mijoz/xizmat.css' %}">
-<div class="container kalla_ogriq">
-  <div class="row">
+<div class="kalla_ogriq">
+  <div class="row container">
     {% for xizmat in xizmatlar %}
       <div class="col-md-4 mb-4 ">
         <div class="card custom-card">
           <img src="{{ xizmat.picture.url }}" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">{{ xizmat.nomi }}</h5>
-            <p class="card-text">{{ xizmat.xizmatlar | slice:40 }}</p>
-            <a href="{% url 'xizdetail' xizmat.id %}" class="btn btn-primary card-button">Ko'rish</a>
+
+            <a href="{% url 'xizdetail' xizmat.id %}" class="btn btn-primary card-button">Видеть</a>
           </div>
         </div>
       </div>
