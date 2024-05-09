@@ -34,5 +34,6 @@ urlpatterns = [
     path('zakazlar/',ZakazlarView.as_view(),name='zakazlar'),
     path('servis/',ServisView.as_view(),name='servis'),
     path('zakazedit/<id>', EditXizmatView.as_view(), name='zakazedit'),
+    path('zakazlar/<int:pk>/delete/', ZakazDeleteView.as_view(), name='zakazdelete'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

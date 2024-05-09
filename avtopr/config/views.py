@@ -1,9 +1,25 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import render,redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views import View
+from django.views.generic import DeleteView
+from pgapp.models import Diagnostikalar
 
 from config.forms import *
+
+
+
+
+
+class ZakazDeleteView(DeleteView):
+    model = Diagnostikalar
+    template_name = 'admin/zakaz_delete.html' 
+    success_url = reverse_lazy('zakazlar')
+
+
+
+
+
 
 
 class HomeView(View):
