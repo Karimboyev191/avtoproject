@@ -1,0 +1,56 @@
+.row .col-md-4 .card {
+    margin-bottom: 2rem;
+    box-shadow: 3px 1px 5px rgb(195, 171, 206);
+}
+
+.row .col-md-4 .card .card-img-top {
+    width: 350.4px;
+    height: 208.44px;
+}
+
+.card {
+    box-shadow: 3px 1px 5px rgb(195, 171, 206);
+}
+
+.kalla_ogriq {
+    padding-top: 150px;
+    background-color: #f4f4f4;
+}
+
+
+.card {
+  box-shadow: 3px 1px 5px rgb(195, 171, 206);
+  transition:0.5s;
+}
+.card:hover{
+transform:scale(1.1);
+transition:0.5s;
+.card-body{
+background-color:red
+}
+color:white;
+}
+.card-body {
+  background-color: rgb(228, 233, 233);
+}
+
+.card-button {
+  display: block;
+  text-align: center;
+  padding: 5px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: red;
+  margin-top: 10px;
+}
+
+.card-button:hover {
+  background-color: rgb(189, 196, 197);
+  transition: background-color 0.5s;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}

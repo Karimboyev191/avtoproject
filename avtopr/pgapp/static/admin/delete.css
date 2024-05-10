@@ -1,0 +1,50 @@
+/* 'delete.css' */
+.confirm-delete-container {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 120px;
+}
+
+.confirm-delete-container h2 {
+    color: #d9534f;
+}
+
+.confirm-delete-container p {
+    color: #555;
+}
+
+.confirm-delete-container form {
+    margin-top: 20px;
+}
+
+.confirm-delete-container button[type="submit"],
+.confirm-delete-container a.cancel-link {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-delete-container button[type="submit"] {
+    background-color: #d9534f;
+}
+
+.confirm-delete-container button[type="submit"]:hover {
+    background-color: #c9302c;
+}
+
+.confirm-delete-container a.cancel-link {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.confirm-delete-container a.cancel-link:hover {
+    background-color: #31b0d5;
+}
