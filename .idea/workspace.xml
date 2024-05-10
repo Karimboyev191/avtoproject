@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59872a2b-8404-4e2b-80e9-d72d7752cf31" name="Changes" comment="remove settings.py">
-      <change afterPath="$PROJECT_DIR$/avtopr/config/settings.py" afterDir="false" />
+    <list default="true" id="236be077-ec82-44ad-9d47-b91d18db1676" name="Changes" comment="delete view">
+      <change beforePath="$PROJECT_DIR$/config/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pgapp/templates/admin/zakazlar.html" beforeDir="false" afterPath="$PROJECT_DIR$/pgapp/templates/admin/zakazlar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,47 +14,50 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2fXqpKuHSrqawSIsFVeuCdEys3a" />
+  <component name="ProjectId" id="2fXtCVCL2ucosiEsasUN5MQQYTZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\github rep\avtoproject\avtopr" />
-      <recent name="D:\github rep\avtoproject\avtopr\static\css" />
-    </key>
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="59872a2b-8404-4e2b-80e9-d72d7752cf31" name="Changes" comment="" />
-      <created>1713957951605</created>
+      <changelist id="236be077-ec82-44ad-9d47-b91d18db1676" name="Changes" comment="" />
+      <created>1713959122882</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713957951605</updated>
+      <updated>1713959122882</updated>
     </task>
-    <task id="LOCAL-00001" summary="remove settings.py">
-      <created>1714387809574</created>
+    <task id="LOCAL-00001" summary="delete view">
+      <created>1715332139350</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1714387809574</updated>
+      <updated>1715332139350</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="delete view">
+      <created>1715334167775</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715334167775</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -65,9 +70,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove settings.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove settings.py" />
+    <MESSAGE value="delete view" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete view" />
   </component>
 </project>
