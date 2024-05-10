@@ -57,27 +57,18 @@ class ServisView(AdminCheck,View):
 class ZakazlarView(AdminCheck,View):
     def get(self,request):
         diagnostikalar=Diagnostikalar.objects.all()
-        return render(request,'admin/zakazlar.html',{'diagnostikalar':diagnostikalar})
+        malumot=[]
+        mijoz=set(i.zakaz_id.mijoz_fio for i in diagnostikalar)
+        for i in mijoz:
+            a=[]
+            for j in diagnostikalar:
+                if j.zakaz_id.mijoz_fio==i:
+                    a.append(j)
+            malumot.append({'diagnostikalar' : a, 'summa':sum(j.usta_haqqi for j in a)})
+        print(malumot)
+        return render(request,'admin/zakazlar.html',{'malumot':malumot})
 
-class ZakazlarDeleteAndYuborishView(View):
-    def get(self, request):
-        diagnostikalar = Diagnostikalar.objects.all()
-        form = YuborishForm()
-        return render(request, 'admin/zakazlar_delete_and_yuborish.html', {'diagnostikalar': diagnostikalar, 'form': form})
 
-    def post(self, request):
-        diagnostikalar_id_list = request.POST.getlist('delete_diagnostikalar')
-        Diagnostikalar.objects.filter(id__in=diagnostikalar_id_list).delete()
-        form = YuborishForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('boshqa_jadvalga_yuborish')
-        return render(request, 'admin/zakazlar_delete_and_yuborish.html', {'form': form})
-
-class BoshqaJadvalgaYuborishView(View):
-    def post(self, request):
-        # Boshqa jadvalga yuborishni bajarish uchun kerakli logika
-        return redirect('zakazlar_delete_and_yuborish')
 
 
 class EditXizmatView(AdminCheck,View):

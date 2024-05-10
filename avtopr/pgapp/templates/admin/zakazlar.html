@@ -15,6 +15,7 @@
 <body>
 <div class="padd container">
     <h2>заказы</h2>
+    {% for i in malumot %}
     <table border="1">
         <thead>
             <tr>
@@ -29,7 +30,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for diagnostika in diagnostikalar %}
+            {% for diagnostika in i.diagnostikalar %}
                 <tr>
                     <td>{{ diagnostika.zakaz_id.id }}</td>
                     <td>{{ diagnostika.zakaz_id.mijoz_fio }}</td>
@@ -52,8 +53,21 @@
 
                 </tr>
             {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Jami summa </td>
+            <td>{{i.summa}}</td>
+        </tr>
         </tbody>
     </table>
+    {% endfor %}
     </div>
 </body>
 </html>
