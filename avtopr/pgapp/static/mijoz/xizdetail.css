@@ -1,24 +1,37 @@
-/* xizdet.css */
-.col{
-background-color:#004953;
+/* mijoz/xizdetail.css */
+
+.kalla_ogriq{
+padding:120px;
+width:100%;
+height:100%;
+position:fixed;
+background-color: #f4f4f4;
 }
+
 .xizmat-container {
-    padding-top:150px
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px; /* Örnek bir üst boşluk */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .xizmat-image {
-    margin-right: 20px; /* İlgili görüntü ile metin arasındaki boşluk */
-}
-
-.xizmat-image img {
-    max-width: 100%; /* Resmin maksimum genişliği */
-    height: auto; /* Oranları koru */
+  width: 300px;
+  height: 250px;
+  margin-right: 20px;
 }
 
 .xizmat-details {
-    /* Metin stilini ayarla (örneğin, font, renk, boyut vb.) */
+  font-family: Arial, sans-serif;
+}
+
+.xizmat-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.xizmat-description {
+  font-size: 18px;
+  color: #666;
 }
