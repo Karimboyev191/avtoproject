@@ -3,24 +3,9 @@ from django.shortcuts import render,redirect
 from django.urls import reverse, reverse_lazy
 from django.views import View
 from django.views.generic import DeleteView
-from pgapp.models import Diagnostikalar
+from pgapp.models import Zakaz
 
 from config.forms import *
-
-
-
-
-
-class ZakazDeleteView(DeleteView):
-    model = Diagnostikalar
-    template_name = 'admin/zakaz_delete.html' 
-    success_url = reverse_lazy('zakazlar')
-
-
-
-
-
-
 
 class HomeView(View):
     def get(self,request):
@@ -29,6 +14,18 @@ class HomeView(View):
 class AdminCheck(UserPassesTestMixin):
     def test_func(self):
         return self.request.user.is_superuser
+
+
+
+class ZakazDeleteView(AdminCheck,View):
+    def get(self,request,id):
+        stat = Diagnostikalar.objects.filter(id=id).first()
+        diagnostika = Diagnostikalar.objects.filter(id=id).update(status= not stat.status)
+
+        return redirect('zakazlar')
+
+
+
 
 class ZakazOlishView(AdminCheck,View):
     def get(self, request):

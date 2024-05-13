@@ -37,15 +37,8 @@ class Diagnostikalar(models.Model):
     usta_id=models.ForeignKey(Ustalar,on_delete=models.CASCADE)
     usta_haqqi=models.DecimalField(max_digits=10,decimal_places=2)
     servis=models.CharField(max_length=200)
+    status=models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.zakaz_id}"
 
-class TugallanganIshlar(models.Model):
-    zakaz_id=models.IntegerField()
-    usta_id=models.IntegerField()
-    usta_haqqi=models.DecimalField(max_digits=10,decimal_places=2)
-    servis = models.CharField(max_length=200)
-
-    def __str__(self):
-        return f"{self.zakaz_id}"

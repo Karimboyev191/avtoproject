@@ -40,15 +40,27 @@
                     <td>{{ diagnostika.servis }}</td>
                     <td>{{ diagnostika.usta_id.fio }}</td>
                     <td>{{ diagnostika.usta_haqqi }}</td>
+                    {% if diagnostika.status %}
+                        <td>закончить</td>
+                    {% else %}
+                        <td>новая работа</td>
+                    {% endif %}
 
                     <td><a href="{% url 'zakazedit' diagnostika.id %}">
                 <i class='bx bx-edit-alt'></i>
             </a></td>
 
             <td>
-                <a href="{% url 'zakazdelete' diagnostika.id %}">
-                  закончить
-                </a>
+                {% if diagnostika.status %}
+                         <a href="{% url 'zakazdelete' diagnostika.id %}">
+                          новая работа
+                        </a>
+                    {% else %}
+                        <a href="{% url 'zakazdelete' diagnostika.id %}">
+                          закончить
+                        </a>
+                    {% endif %}
+
             </td>
 
                 </tr>
