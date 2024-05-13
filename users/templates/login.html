@@ -44,7 +44,7 @@
 <div class="bodi">
 <div class="row justify-content-center padding">
     <div class="col-sm-6">
-        <h2 class="text-muted">Kirish</h2>
+        <h2 class="text-muted">Войти</h2>
 
         {% if form.non_field_errors %}
         <small class="text-danger">
@@ -55,20 +55,20 @@
         <form method="POST" action="{% url 'login' %}">
             {% csrf_token %}
             <div class="form-group">
-                <label for="{{ form.username.id_for_label }}">Foydalanuvchi nomi</label>
+                <label for="{{ form.username.id_for_label }}">Имя пользователя</label>
                 <input type="text" name="{{ form.username.name }}" class="form-control" value="{{ form.username.value }}"/>
                 <span class="text-danger">{{ form.username.errors }}</span>
             </div>
 
             <div class="form-group">
-                <label for="{{ form.password.id_for_label }}">Parol</label>
+                <label for="{{ form.password.id_for_label }}">Пароль</label>
                 <input type="password" name="{{ form.password.name }}" class="form-control"/>
                 <span class="text-danger">{{ form.password.errors }}</span>
             </div>
 
-            <button type="submit" class="btn btn-dark import">Kirish</button>
+            <button type="submit" class="btn btn-dark import">Войти</button>
 
-            <a href="{% url 'register' %}" class="btn btn-default import">Hisob yaratish</a>
+            <a href="{% url 'register' %}" class="btn btn-default import">Зарегистрироваться</a>
         </form>
     </div>
 </div>

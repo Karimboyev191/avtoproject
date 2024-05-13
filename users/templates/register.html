@@ -39,11 +39,11 @@
 <div class="padding">
 <div class="row justify-content-center">
     <div class="col-sm-6">
-        <h2 class="text-muted">Register</h2>
+        <h2 class="text-muted">Регистрировать</h2>
         <form method="POST" action="{% url 'register' %}">
             {% csrf_token %}
             <div class="form-group">
-               <label for="{{ form.username.id_for_label }}">Username</label>
+               <label for="{{ form.username.id_for_label }}">Имя пользователя</label>
                 <input type="text" name="{{ form.username.name }}" class="form-control" value="{{ form.username.value }}"/>
                 <span class="text-danger">{{ form.username.errors }}</span>
             </div>
@@ -55,14 +55,14 @@
             </div>
 
              <div class="form-group">
-               <label for="{{ form.password2.id_for_label }}">Re-type Password</label>
+               <label for="{{ form.password2.id_for_label }}">Повторный ввод пароля</label>
                 <input type="password" name="{{ form.password2.name }}" class="form-control" value="{{ form.password2.value }}"/>
                 <span class="text-danger">{{ form.password2.errors }}</span>
             </div>
 
-            <button type="submit" class="btn btn-dark import">Submit</button>
+            <button type="submit" class="btn btn-dark import">Отправить</button>
 
-            <a href="{% url 'login' %}" class="btn btn-default import">Login</a>
+            <a href="{% url 'login' %}" class="btn btn-default import">Логин</a>
         </form>
     </div>
 </div>
