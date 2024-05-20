@@ -25,6 +25,7 @@ class DiagnostikalarForm(forms.ModelForm):
             'usta_id':'Рабочий',
             'usta_haqqi':'Деньги сотрудника',
             'servis':'Служба',
+
         }
 
 

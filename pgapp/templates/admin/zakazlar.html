@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
+<style>
+    hr{
+    height:5px;
+    background-color:blue;
+    }
+</style>
 <link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
   <script src="{% static 'js/script.js' %}"></script>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -27,6 +32,8 @@
                 <th>Служба</th>
                 <th>Рабочий</th>
                 <th>Деньги сотрудникаa</th>
+                <th>Время</th>
+
             </tr>
         </thead>
         <tbody>
@@ -40,10 +47,12 @@
                     <td>{{ diagnostika.servis }}</td>
                     <td>{{ diagnostika.usta_id.fio }}</td>
                     <td>{{ diagnostika.usta_haqqi }}</td>
+                    <td>{{ diagnostika.zakaz_id.vaqti|date:"Y-m-d H:i:s" }}</td>
+
                     {% if diagnostika.status %}
-                        <td>закончить</td>
+                        <td style="background-color:red; color:white;">Завершена <br>{{ diagnostika.t_vaqti|date:"Y-m-d H:i:s" }}</td>
                     {% else %}
-                        <td>новая работа</td>
+                        <td style="background-color:green; color:white;">новая работа</td>Получить
                     {% endif %}
 
                     <td><a href="{% url 'zakazedit' diagnostika.id %}">
@@ -53,7 +62,7 @@
             <td>
                 {% if diagnostika.status %}
                          <a href="{% url 'zakazdelete' diagnostika.id %}">
-                          новая работа
+                          Получить
                         </a>
                     {% else %}
                         <a href="{% url 'zakazdelete' diagnostika.id %}">
@@ -79,6 +88,7 @@
         </tr>
         </tbody>
     </table>
+    <hr>
     {% endfor %}
     </div>
 </body>

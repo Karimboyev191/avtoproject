@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Yonalishlar(models.Model):
@@ -28,6 +29,8 @@ class Zakaz(models.Model):
     avtosi=models.CharField(max_length=200)
     rangi=models.CharField(max_length=200)
     diagnostika=models.CharField(max_length=200)
+    vaqti=models.DateTimeField(default=timezone.now)
+
 
     def __str__(self):
         return self.mijoz_fio
@@ -38,6 +41,8 @@ class Diagnostikalar(models.Model):
     usta_haqqi=models.DecimalField(max_digits=10,decimal_places=2)
     servis=models.CharField(max_length=200)
     status=models.BooleanField(default=False)
+    t_vaqti=models.DateTimeField(blank=True, null=True)
+
 
     def __str__(self):
         return f"{self.zakaz_id}"

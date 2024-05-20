@@ -21,6 +21,7 @@ class ZakazDeleteView(AdminCheck,View):
     def get(self,request,id):
         stat = Diagnostikalar.objects.filter(id=id).first()
         diagnostika = Diagnostikalar.objects.filter(id=id).update(status= not stat.status)
+        diagnostika = Diagnostikalar.objects.filter(id=id).update(t_vaqti=timezone.now())
 
         return redirect('zakazlar')
 
@@ -53,7 +54,7 @@ class ServisView(AdminCheck,View):
 
 class ZakazlarView(AdminCheck,View):
     def get(self,request):
-        diagnostikalar=Diagnostikalar.objects.all().order_by('id')
+        diagnostikalar=Diagnostikalar.objects.all().order_by('-id')
         malumot=[]
         mijoz=set(i.zakaz_id.mijoz_fio for i in diagnostikalar)
         for i in mijoz:
