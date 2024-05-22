@@ -14,7 +14,7 @@ class XizmatView(View):
 
 class XizDetailView(View):
     def get(self,request,a):
-        xizmat=Yonalishlar.objects.get(id=a)
+        xizmat=Usta_yonalishi.objects.get(id=a)
         return render(request,"hizdetail.html",{"xizmat":xizmat})
 
 

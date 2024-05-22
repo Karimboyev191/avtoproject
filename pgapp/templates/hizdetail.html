@@ -8,13 +8,14 @@
     <div class="xizmat-container kalla_ogriq col">
         <div class="xizmat-image">
 
-            <img src="{{ xizmat.picture.url }}" alt="{{ xizmat.nomi }}" class="xizmat-image">
+            <img src="{{ xizmat.yonalish_id.picture.url }}" alt="{{ xizmat.yonalish_id.nomi }}" class="xizmat-image">
         </div>
         <div class="xizmat-details">
 
-            <h2 class="xizmat-title">{{ xizmat.nomi }}</h2>
+            <h2 class="xizmat-title">{{ xizmat.yonalish_id.nomi }}</h2>
 
-            <p class="xizmat-description">{{ xizmat.xizmatlar }}</p>
+            <p class="xizmat-description">{{ xizmat.yonalish_id.xizmatlar }}</p><br>
+            <p style="font-size:20px;">механик:<i> {{ xizmat.usta_id.fio }}</i></p>
         </div>
     </div>
 {% endblock content %}

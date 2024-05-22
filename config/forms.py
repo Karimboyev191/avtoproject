@@ -22,7 +22,7 @@ class DiagnostikalarForm(forms.ModelForm):
         fields = ('zakaz_id','usta_id', 'usta_haqqi','servis')
         labels={
             'zakaz_id':'Заказ ИД',
-            'usta_id':'Рабочий',
+            'usta_id':'Механик',
             'usta_haqqi':'Деньги сотрудника',
             'servis':'Служба',
 
