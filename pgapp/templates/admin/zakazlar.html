@@ -20,6 +20,7 @@
 <body>
 <div class="padd container">
     <h2>заказы</h2>
+
     {% for i in malumot %}
     <table border="1">
         <thead>
@@ -33,6 +34,7 @@
                 <th>Рабочий</th>
                 <th>Деньги сотрудникаa</th>
                 <th>Время</th>
+                <th><a href="?teskari={% if not teskari %}true{% else %}false{% endif %}">Cортировка</a></th>
 
             </tr>
         </thead>
