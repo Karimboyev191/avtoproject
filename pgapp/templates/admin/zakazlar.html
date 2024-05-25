@@ -2,13 +2,13 @@
 {% load static %}
 {% block content %}
 <style>
-    hr{
-    height:5px;
-    background-color:blue;
+    hr {
+        height: 5px;
+        background-color: blue;
     }
 </style>
 <link rel="stylesheet" href="{% static 'mijoz/style.css' %}">
-  <script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <head>
@@ -16,11 +16,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zakazlar</title>
+    <script>
+        function toggleSort() {
+            const currentSort = "{{ current_sort }}";
+            const newSort = currentSort === "asc" ? "desc" : "asc";
+            const url = new URL(window.location.href);
+            url.searchParams.set('sort', newSort);
+            window.location.href = url.toString();
+        }
+    </script>
 </head>
 <body>
 <div class="padd container">
     <h2>заказы</h2>
-
+    <button onclick="toggleSort()">Сортировка</button>
     {% for i in malumot %}
     <table border="1">
         <thead>
@@ -32,10 +41,8 @@
                 <th>Диагностика</th>
                 <th>Служба</th>
                 <th>Рабочий</th>
-                <th>Деньги сотрудникаa</th>
+                <th>Деньги сотрудника</th>
                 <th>Время</th>
-                <th><a href="?teskari={% if not teskari %}true{% else %}false{% endif %}">Cортировка</a></th>
-
             </tr>
         </thead>
         <tbody>
@@ -54,46 +61,35 @@
                     {% if diagnostika.status %}
                         <td style="background-color:red; color:white;">Завершена <br>{{ diagnostika.t_vaqti|date:"Y-m-d H:i:s" }}</td>
                     {% else %}
-                        <td style="background-color:green; color:white;">новая работа</td>Получить
+                        <td style="background-color:green; color:white;">новая работа</td>
                     {% endif %}
 
                     <td><a href="{% url 'zakazedit' diagnostika.id %}">
-                <i class='bx bx-edit-alt'></i>
-            </a></td>
+                        <i class='bx bx-edit-alt'></i>
+                    </a></td>
 
-            <td>
-                {% if diagnostika.status %}
-                         <a href="{% url 'zakazdelete' diagnostika.id %}">
-                          Получить
-                        </a>
-                    {% else %}
-                        <a href="{% url 'zakazdelete' diagnostika.id %}">
-                          закончить
-                        </a>
-                    {% endif %}
-
-            </td>
-
+                    <td>
+                        {% if diagnostika.status %}
+                             <a href="{% url 'zakazdelete' diagnostika.id %}">
+                              Получить
+                            </a>
+                        {% else %}
+                            <a href="{% url 'zakazdelete' diagnostika.id %}">
+                              закончить
+                            </a>
+                        {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Общая сумма </td>
-            <td>{{i.summa}}</td>
-        </tr>
+            <tr>
+                <td colspan="8">Общая сумма</td>
+                <td>{{ i.summa }}</td>
+            </tr>
         </tbody>
     </table>
     <hr>
     {% endfor %}
-    </div>
+</div>
 </body>
 </html>
-
-{% endblock content%}
+{% endblock content %}

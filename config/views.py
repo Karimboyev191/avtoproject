@@ -52,22 +52,27 @@ class ServisView(AdminCheck,View):
             return redirect('zakazlar')
         return render(request, 'admin/.html', {'servis_form':servis_form })
 
-class ZakazlarView(AdminCheck,View):
-    def get(self,request):
-        teskari = request.GET.get('teskari', 'false') == 'true'
-        diagnostikalar=Diagnostikalar.objects.all().order_by('-id' if teskari else 'id')
-        malumot=[]
-        mijoz=set(i.zakaz_id.mijoz_fio for i in diagnostikalar)
+
+class ZakazlarView(AdminCheck, View):
+    def get(self, request):
+        sort_order = request.GET.get('sort', 'desc')
+        diagnostikalar = Diagnostikalar.objects.all().order_by('-id')
+
+        malumot = []
+        mijoz = set(i.zakaz_id.mijoz_fio for i in diagnostikalar)
         for i in mijoz:
-            a=[]
+            a = []
             for j in diagnostikalar:
-                if j.zakaz_id.mijoz_fio==i:
+                if j.zakaz_id.mijoz_fio == i:
                     a.append(j)
-            malumot.append({'diagnostikalar' : a, 'summa':sum(j.usta_haqqi for j in a)})
-        print(malumot)
-        return render(request,'admin/zakazlar.html',{'malumot':malumot})
+            malumot.append({'diagnostikalar': a, 'summa': sum(j.usta_haqqi for j in a)})
 
+        if sort_order == 'asc':
+            malumot.sort(key=lambda x: x['diagnostikalar'][0].zakaz_id.id)
+        else:
+            malumot.sort(key=lambda x: x['diagnostikalar'][0].zakaz_id.id, reverse=True)
 
+        return render(request, 'admin/zakazlar.html', {'malumot': malumot, 'current_sort': sort_order})
 
 
 class EditXizmatView(AdminCheck,View):
